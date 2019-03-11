@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 260px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<style type="text/css">
+			img {
+				width: 260px;
+				height: 100px;
+			}
+		</style>
+		<div id="">
+			<img id="c" src="img/1.jpg"/>
+		</div>
+		<script type="text/javascript">
+			var index=0;
+			function fun(){
+				var pic=["1.jpg","2.jpg","3.jpg","4.jpg"];
+				var img=document.getElementById("c");
+				img.src="img/"+pic[index];
+				index++;
+				if(index==4){
+					index=0; 
+				}
+			}
+			var timer=setInterval(fun,1000);
+			var img=document.getElementById("c");
+			img.onmouseover=function(){
+				clearInterval(timer);
+			}
+			img.onmouseout=function(){
+				timer =setInterval(fun,1000);
+			}
+		</script>
+	</body>
+</html>

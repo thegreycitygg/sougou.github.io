@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/qq登陆.css"/>
+	</head>
+	<body>
+			<div id="one1">
+			<div class="one1">
+					<img src="img/qq.png"/>
+					<div class="yin">
+						<h4>音乐馆</h4>
+					</div> 
+				<ul>
+					
+					<li>我的音乐</li>
+					<li>客户端</li>
+					<li>音乐号</li>
+					<li>VIP</li>
+					<li><input type="text" name="" id="" placeholder="搜索音乐,MV,歌单,用户" value="" /></li>
+					<li>登录</li>
+					<li class="kai">开通绿钻豪华版</li>
+					
+				</ul>
+			
+			</div>
+		<div id="one">
+			<div id="two">
+					<!--<img src="img/qq.png"/>-->
+					<h3>私人音乐空间,听我想听的歌</h3>
+					<h4>登陆管理我的音乐,多终端同步</h4>
+					<div id="four">
+					<span>账号:</span>	<input type="text" name="" id="zhanghao" value="" /><br />
+					<span>密码:</span><input type="password" name="" id="mima" value="" />
+					</div>
+					<div id="three">
+						 <h5><a href="#" style="text-decoration:none;"  id="denglv">立即登录</a></h5>
+						 <style type="text/css">
+						 	denglv{
+						 		color: white;
+						 		text-decoration:none;
+						 	}
+						 	denglv:hover{
+						 		color: white;
+						 	}
+						 </style>
+					</div>
+			</div>
+		</div>
+	
+	<script type="text/javascript">
+		var zhanghao=document.getElementById("zhanghao");
+		var mima = document.getElementById("mima");
+		var denglv =document.getElementById("denglv");
+		denglv.onclick=function(){
+			if(zhanghao.value=="123456"  &&  mima.value ==123456){
+				alert("登陆成功");
+				denglv.href="qq音乐.html";
+			}else{
+				alert("登陆失败");
+				denglv.href="#denglv";
+			}
+		}
+	</script>
+		
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+          /*  background-color: #000;*/
+            /*防止出现向下滚动条*/
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        function snow() {
+            //1、定义一片雪花模板
+            var flake = $("<div>").css({
+                "position": "absolute",
+                "color": "#fff"
+            }).html("♬");
+
+            //获取页面的宽度，利用这个数来算出，雪花开始时left的值
+            var documentWidth = $(document).width();
+
+            //获取页面的高度 相当于雪花下落结束时Y轴的位置
+            var documentHieght = $(document).height();
+
+            //定义生成一片雪花的毫秒数
+            var millisec = 100;
+            //2、设置第一个定时器，周期性定时器，每隔一段时间（millisec）生成一片雪花；
+            setInterval(function() {
+                //随机生成雪花下落 开始 时left的值，相当于开始时X轴的位置
+                var startLeft = Math.random() * documentWidth;
+
+                //随机生成雪花下落 结束 时left的值，相当于结束时X轴的位置
+                var endLeft = Math.random() * documentWidth;
+
+                //随机生成雪花大小
+                var flakeSize = 5 + 20 * Math.random();
+
+                //随机生成雪花下落持续时间
+                var durationTime = 4000 + 7000 * Math.random();
+
+                //随机生成雪花下落 开始 时的透明度
+                var startOpacity = 0.7 + 0.3 * Math.random();
+
+                //随机生成雪花下落 结束 时的透明度
+                var endOpacity = 0.2 + 0.2 * Math.random();
+
+                //3、克隆一个雪花模板,定义雪花的初始样式，拼接到页面中
+                flake.clone().appendTo($("body")).css({
+                    "left": startLeft,
+                    "opacity": startOpacity,
+                    "font-size": flakeSize,
+                    "top": "-25px",
+                }).animate({ //执行动画
+                    "left": endLeft,
+                    "opacity": endOpacity,
+                    "top": documentHieght
+                }, durationTime, function() {
+                    //4、当雪花落下后，删除雪花。
+                    $(this).remove(); 
+                });
+            }, millisec);
+        };
+        snow();
+    </script>
+</body>
+</html>		
+		
+		
+
+<!--https://y.gtimg.cn/mediastyle/yqq/img/loading.gif-->
